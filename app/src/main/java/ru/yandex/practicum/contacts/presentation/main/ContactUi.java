@@ -5,8 +5,10 @@ import androidx.annotation.NonNull;
 import java.util.List;
 
 import ru.yandex.practicum.contacts.model.ContactType;
+import ru.yandex.practicum.contacts.presentation.base.BaseListDiffCallback;
+import ru.yandex.practicum.contacts.presentation.base.ListDiffInterface;
 
-public class ContactUi {
+public class ContactUi extends BaseListDiffCallback<ContactUi> implements ListDiffInterface<ContactUi> {
 
     private final String name;
     private final String phone;
@@ -41,8 +43,14 @@ public class ContactUi {
         return types;
     }
 
+
     @Override
-    public boolean equals(Object o) {
+    public boolean theSameAs(ContactUi newItem) {
+        return this.equals(newItem);
+    }
+
+    @Override
+    public boolean equals(Object o)  {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
