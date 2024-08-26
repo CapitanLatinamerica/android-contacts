@@ -43,10 +43,9 @@ public class ContactUi extends BaseListDiffCallback<ContactUi> implements ListDi
         return types;
     }
 
-
     @Override
     public boolean theSameAs(ContactUi newItem) {
-        return this.equals(newItem);
+        return this == newItem;
     }
 
     @Override
