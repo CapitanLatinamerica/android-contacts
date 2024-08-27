@@ -8,7 +8,7 @@ import ru.yandex.practicum.contacts.model.ContactType;
 import ru.yandex.practicum.contacts.presentation.base.BaseListDiffCallback;
 import ru.yandex.practicum.contacts.presentation.base.ListDiffInterface;
 
-public class ContactUi extends BaseListDiffCallback<ContactUi> implements ListDiffInterface<ContactUi> {
+public class ContactUi implements ListDiffInterface<ContactUi> {
 
     private final String name;
     private final String phone;
@@ -45,7 +45,7 @@ public class ContactUi extends BaseListDiffCallback<ContactUi> implements ListDi
 
     @Override
     public boolean theSameAs(ContactUi newItem) {
-        return this == newItem;
+        return this.hashCode() == newItem.hashCode();
     }
 
     @Override

@@ -6,7 +6,7 @@ import ru.yandex.practicum.contacts.presentation.base.BaseListDiffCallback;
 import ru.yandex.practicum.contacts.presentation.base.ListDiffInterface;
 import ru.yandex.practicum.contacts.presentation.sort.SortTypeUI;
 
-public class FilterContactTypeUi  extends BaseListDiffCallback<FilterContactTypeUi> implements ListDiffInterface <FilterContactTypeUi> {
+public class FilterContactTypeUi implements ListDiffInterface <FilterContactTypeUi> {
 
     private final FilterContactType contactType;
     private final boolean selected;
@@ -26,7 +26,7 @@ public class FilterContactTypeUi  extends BaseListDiffCallback<FilterContactType
 
     @Override
     public boolean theSameAs(FilterContactTypeUi newItem) {
-        return this == newItem;
+        return this.contactType == newItem.contactType;
     }
 
     @Override
